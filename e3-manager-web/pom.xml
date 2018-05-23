@@ -82,7 +82,7 @@
 			<artifactId>zkclient</artifactId>
 		</dependency>
 	</dependencies>
-		<!-- 配置tomcat插件 -->
+	<!-- 配置tomcat插件 -->
 	<build>
 		<plugins>
 			<plugin>
