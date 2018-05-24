@@ -1,19 +1,17 @@
 package cn.e3mall.pagehelper;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.alibaba.dubbo.common.utils.CollectionUtils;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-
 import cn.e3mall.mapper.TbItemMapper;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.pojo.TbItemExample;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 public class PageHelperTest {
 
@@ -28,12 +26,10 @@ public class PageHelperTest {
 		//执行查询
 		TbItemExample example = new TbItemExample();
 		List<TbItem> list = itemMapper.selectByExample(example);
-		if (CollectionUtils.isNotEmpty(list)) {
-			//取分页信息，PageInfo。1、总记录数2、总页数 。当前页码
-			PageInfo<TbItem> pageInfo = new PageInfo<>(list);
-			System.out.println(pageInfo.getTotal());
-			System.out.println(pageInfo.getPages());
-		}
+		//取分页信息，PageInfo。1、总记录数2、总页数 。当前页码
+		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
+		System.out.println(pageInfo.getTotal());
+		System.out.println(pageInfo.getPages());
 		System.out.println(list.size());
 	}
 }
